@@ -1,3 +1,5 @@
+
+# 项目是在 https://github.com/cnhefang/image_picker_saver.git   基础上修改的，感谢原作者！
 # Image Picker and Saver plugin for Flutter
 [![pub package](https://img.shields.io/pub/v/image_picker_saver.svg)](https://pub.dartlang.org/packages/image_picker_saver)
 
