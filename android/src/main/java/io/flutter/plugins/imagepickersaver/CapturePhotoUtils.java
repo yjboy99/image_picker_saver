@@ -53,11 +53,14 @@ public class CapturePhotoUtils {
         String galleryPath = Environment.getExternalStorageDirectory()
                 + File.separator + Environment.DIRECTORY_DCIM
                 + File.separator + "Camera" + File.separator;
-        String photoName ="";
-        if(null==title ||title.isEmpty()){
-            photoName = source.hashCode() + ".jpg";
+        String photoName = "";
+        if(!title.endsWith("Camera")){
+            // 由flutter生成hash可以保证hash值一致性,
+            photoName=title + ".jpg";
+        }else{
+            photoName=System.currentTimeMillis() + ".jpg";
         }
-        Log.e("保存图片", "图片名称"+photoName,new IllegalArgumentException("参数错误"));
+//        Log.i("保存图片", "图片名称"+photoName+"title"+title,new IllegalArgumentException("参数错误"));
         File file = null;
         String fileName = "";
         // 声明输出流
